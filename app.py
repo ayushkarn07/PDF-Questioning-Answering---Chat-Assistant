@@ -104,7 +104,7 @@ if question and st.session_state.vectorstore:
         search_kwargs={"k": 5}
     )
 
-    docs = retriever.get_relevant_documents(question)
+    docs = retriever.invoke(question)
     context = "\n\n".join(doc.page_content for doc in docs)
 
     final_prompt = prompt.format(
