@@ -9,13 +9,13 @@ The app is deployed using **Streamlit Cloud** and powered by **Groq LLM**, **FAI
 
 ## 🚀 Features
 
-- 📂 Upload PDF documents
-- 🔍 Semantic search using FAISS vector database
-- 🧠 Context-aware answers using Groq LLM (LLaMA 3.1)
-- 📄 Supports large PDFs (research papers, reports, books)
-- 💬 Chat-style question answering interface
-- 🔐 Secure API key handling using Streamlit Secrets
-- ☁️ Deployed on Streamlit Cloud
+- Upload PDF documents
+- Semantic search using FAISS vector database
+- Context-aware answers using Groq LLM (LLaMA 3.1)
+- Supports large PDFs (research papers, reports, books)
+- Chat-style question answering interface
+- Secure API key handling using Streamlit Secrets
+- Deployed on Streamlit Cloud
 
 ---
 
@@ -30,5 +30,4 @@ The app is deployed using **Streamlit Cloud** and powered by **Groq LLM**, **FAI
 
 ---
 
-## 📁 Project Structure
 
