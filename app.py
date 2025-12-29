@@ -1,4 +1,3 @@
-import os
 import tempfile
 import streamlit as st
 
@@ -21,11 +20,6 @@ st.set_page_config(
 st.title("📄 PDF Question Answering System")
 st.caption("Groq + RAG | Ask questions from long PDFs (50–60 pages supported)")
 
-# ======================================
-# GROQ API KEY
-# ======================================
-# Secure API key (from Streamlit Secrets)
-client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 # ======================================
 # SESSION STATE
 # ======================================
@@ -67,8 +61,7 @@ if uploaded_file:
             model_name="sentence-transformers/all-MiniLM-L6-v2"
         )
 
-        vectorstore = FAISS.from_documents(chunks, embeddings)
-        st.session_state.vectorstore = vectorstore
+        st.session_state.vectorstore = FAISS.from_documents(chunks, embeddings)
 
     st.sidebar.success("✅ PDF processed successfully!")
 
@@ -83,7 +76,9 @@ llm = ChatGroq(
 # ======================================
 # PROMPT TEMPLATE
 # ======================================
-prompt_template = '''
+prompt = PromptTemplate(
+    input_variables=["context", "question"],
+    template="""
 You are an AI assistant answering questions strictly based on the given context.
 If the answer is not present in the context, say:
 "I don't know based on the provided document."
@@ -95,11 +90,7 @@ Question:
 {question}
 
 Answer:
-'''
-
-prompt = PromptTemplate(
-    input_variables=["context", "question"],
-    template=prompt_template
+"""
 )
 
 # ======================================
@@ -114,7 +105,7 @@ if question and st.session_state.vectorstore:
     )
 
     docs = retriever.get_relevant_documents(question)
-    context = "\\n\\n".join([doc.page_content for doc in docs])
+    context = "\n\n".join(doc.page_content for doc in docs)
 
     final_prompt = prompt.format(
         context=context,
