@@ -6,6 +6,8 @@ Users can upload large PDFs (50–60+ pages) and ask natural language questions 
 The app is deployed using **Streamlit Cloud** and powered by **Groq LLM**, **FAISS**, and **HuggingFace embeddings**.
 
 ---
+# URL
+ pdfaayush.streamlit.app/
 
 ## 🚀 Features
 
