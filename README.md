@@ -32,8 +32,9 @@ The app is deployed using **Streamlit Cloud** and powered by **Groq LLM**, **FAI
 
 ---
 # SnapShots
-<img width="957" height="415" alt="image" src="https://github.com/user-attachments/assets/65e85500-0ff6-416f-9b22-bd8df14e1cf7" />
 <img width="959" height="416" alt="image" src="https://github.com/user-attachments/assets/ca637600-0303-439d-af59-db64742a48a4" />
+<img width="957" height="415" alt="image" src="https://github.com/user-attachments/assets/65e85500-0ff6-416f-9b22-bd8df14e1cf7" />
+
 
 
 
